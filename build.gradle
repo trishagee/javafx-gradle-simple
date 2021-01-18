@@ -1,5 +1,6 @@
 plugins {
-    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 group 'org.example'
@@ -9,11 +10,9 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+javafx {
+    version = "15.0.1"
+    modules = ["javafx.controls", "javafx.fxml"]
 }
 
-test {
-    useJUnitPlatform()
-}
+mainClassName = "com.mechanitis.demo.javafxgradle.HelloFX"
